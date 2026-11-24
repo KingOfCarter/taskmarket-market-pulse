@@ -1,0 +1,44 @@
+name: Mobile load test
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install Lighthouse for this test
+        run: npm install --prefix "$RUNNER_TEMP/qa" --no-save --ignore-scripts --no-audit --no-fund lighthouse@13.6.0
+      - name: Measure three cold mobile navigations
+        env:
+          SITE_URL: https://kingofcarter.github.io/taskmarket-market-pulse/
+        run: |
+          set -euo pipefail
+          export CHROME_PATH="$(command -v google-chrome)"
+          for run in 1 2 3; do
+            node "$RUNNER_TEMP/qa/node_modules/lighthouse/cli/index.js" "$SITE_URL" --quiet --only-categories=performance --form-factor=mobile --throttling-method=devtools --chrome-flags="--headless --no-sandbox --disable-extensions" --output=json --output-path="$RUNNER_TEMP/run-$run.json"
+          done
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const summary = ['| Run | Largest contentful paint | Data rendered | Window load |', '|---|---:|---:|---:|'];
+          for (let run = 1; run <= 3; run++) {
+            const report = JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP + '/run-' + run + '.json'));
+            if (report.runtimeError) throw new Error(report.runtimeError.code);
+            const metrics = report.audits.metrics.details.items[0];
+            const data = report.audits['user-timings'].details.items.find(x => x.name === 'market-data-ready');
+            const duration = value => Number.isFinite(value) ? (value / 1000).toFixed(2) + ' s' : 'unavailable';
+            const row = [run, duration(metrics.observedLargestContentfulPaint), duration(data?.startTime), duration(metrics.observedLoad)];
+            console.log('Mobile run', ...row);
+            summary.push('| ' + row.join(' | ') + ' |');
+            if (run === 1) console.log('Profile', JSON.stringify(report.configSettings.throttling), report.environment.networkUserAgent);
+          }
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary.join('\n') + '\n');
+          JS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mobile-lighthouse
+          path: ${{ runner.temp }}/run-*.json
+          retention-days: 2
