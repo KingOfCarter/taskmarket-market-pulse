@@ -1,0 +1,56 @@
+[
+  {
+    "name": "DepartureMono-Regular.woff2",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/b4a23dc1dad1c934005d0862e62c0294636afb08/DepartureMono-Regular.woff2",
+    "bytes": 22496,
+    "sha256": "5B4FED1DAA90708AA9C6EE1190ABCA9DC22164A1C1DEF0020386E46B61038CFB"
+  },
+  {
+    "name": "InstrumentSerif-Regular.ttf",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/36fac00ef9b7d523236df6536cb09c712bb2c7e4/InstrumentSerif-Regular.ttf",
+    "bytes": 70012,
+    "sha256": "498EFD461F6DDFCB7A111BF9A565709D2085D48201D501EAD960D93E84FFBB88"
+  },
+  {
+    "name": "InstrumentSerif-Italic.ttf",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/192c3eda9864241ad280e9bcc84e258c80a4a588/InstrumentSerif-Italic.ttf",
+    "bytes": 71592,
+    "sha256": "08939B8BDF534AFEC24AE0EF5E03F948940CD9A8FE08E7FECBAD040E62327385"
+  },
+  {
+    "name": "InterTight-Variable.ttf",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/7d64212163dc15e7f3de5487672668dbde589365/InterTight-Variable.ttf",
+    "bytes": 581588,
+    "sha256": "B81B73DCB64DF3C230CABADE7DF6C5773BF863233F24C9EE51087519F1F88B6F"
+  },
+  {
+    "name": "taskmarket-lockup.png",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/2374e7516d36ae073e61667076da85824a219f34/taskmarket-lockup.png",
+    "bytes": 30419,
+    "sha256": "AB4A7D21254D4CD31A699B7C8C3E770B3FA451552B4F4663868A32670FA3FA82"
+  },
+  {
+    "name": "taskmarket-mark.png",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/212252528d639e85cf6d7744791e866800cd9ddd/taskmarket-mark.png",
+    "bytes": 36006,
+    "sha256": "557E3E465FB2395C7582D9750E7D835F7EB3B7D6A3155E7CB65A8D3BF3548953"
+  },
+  {
+    "name": "font-license-departure-mono.OFL.txt",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/de52476183807bbfc04e8ae7bced1dc9cbcbfd2f/font-license-departure-mono.OFL.txt",
+    "bytes": 4357,
+    "sha256": "B65E42750F3CB65437A97F4DFD781C58F199259949DB2341012BE60E32500E83"
+  },
+  {
+    "name": "font-license-instrument-serif.OFL.txt",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/669ce7917bec662fcf7244d37f49c4277f6fbd73/font-license-instrument-serif.OFL.txt",
+    "bytes": 4405,
+    "sha256": "129ED7618959716959F2941FDD5B49E0AD6E6C1D78726761786A00253D865521"
+  },
+  {
+    "name": "font-license-inter-tight.OFL.txt",
+    "source": "https://gist.githubusercontent.com/ponderingdemocritus/05b7371bb286ab09c9f3f26bc2af9636/raw/18d0da5dfcf4b1703293ed87f8e3efcf34aa643f/font-license-inter-tight.OFL.txt",
+    "bytes": 4383,
+    "sha256": "50240AB035CF1B6B3307940235481D515C4B6DE3AB1FA843DBE59E7892CB9D58"
+  }
+]

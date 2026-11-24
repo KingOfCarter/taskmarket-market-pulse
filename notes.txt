@@ -1,0 +1,15 @@
+Market Pulse • TSK-BRK611AN
+Live URL: https://kingofcarter.github.io/taskmarket-market-pulse/
+Public repository: https://github.com/KingOfCarter/taskmarket-market-pulse
+Stack: Node.js built-ins, HTML, CSS and browser JavaScript, GitHub Actions and GitHub Pages.
+Refresh: GitHub Actions fetches all eight chain/range views every 20 minutes. Each build caches upstream GETs for five minutes. GitHub Pages serves the last complete deployment. The browser checks every five minutes and marks snapshots older than one hour stale.
+Public API: https://api.taskmarket.dev
+/api/market/stats
+/api/stats/breakdowns
+/api/stats/platform-time-series
+/api/stats/activity-heatmap
+/api/stats/activity-feed
+/api/tasks
+Deploy: gh workflow run pages.yml --ref main (from a checkout, with Pages configured for GitHub Actions).
+Scopes: daily trends, heatmap and API breakdowns are platform-wide. The public task list and filtered feed identify their chain explicitly. Headline scope varies by field.
+License: MIT for source. Brand and font notices are in public/assets.
